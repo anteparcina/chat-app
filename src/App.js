@@ -24,6 +24,9 @@ class App extends Component {
   constructor() {
     super();
     this.drone = new window.Scaledrone("aeUyW6RBOnD80lTv", {data: this.state.member});
+  }
+
+  componentDidMount() {
     this.drone.on('open', error => {
       if (error) {
         return console.error(error);
@@ -39,7 +42,7 @@ class App extends Component {
       this.setState({messages});
     });
   }
-
+  
   render() {
     return (
       <div className="App">
